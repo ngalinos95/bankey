@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainPage = ViewController()
+        let mainPage = LoginViewController()
         let nav = UINavigationController(rootViewController: mainPage)
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
