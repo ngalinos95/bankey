@@ -20,16 +20,37 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 200)
-    }
-    // Create the User Name Text Field
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: 200, height: 200)
+//    }
+    // MARK: Create UI Views
+    // Create A Stack View
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
+
+    // Create User Name Text Field
     lazy var userNameTextField: UITextField = {
         let userNameTextField = UITextField()
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
         userNameTextField.placeholder = "User Name"
         userNameTextField.delegate = self
+        userNameTextField.borderStyle = .bezel
         return userNameTextField
+    }()
+    // Create Password Text Field
+    lazy var paswordTextField: UITextField = {
+        let paswordTextField = UITextField()
+        paswordTextField.translatesAutoresizingMaskIntoConstraints = false
+        paswordTextField.placeholder = "Password"
+        paswordTextField.delegate = self
+        paswordTextField.borderStyle = .bezel
+        paswordTextField.isSecureTextEntry = true
+        return paswordTextField
     }()
 
 
@@ -40,18 +61,21 @@ extension LoginView {
         // SetUp UIView
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .orange
-        // Setup userNameTextField
-
     }
 
     private func layout() {
-        // Add userNameTextField
-        self.addSubview(userNameTextField)
+        // Add stackView
+        self.addSubview(stackView)
         NSLayoutConstraint.activate([
-            userNameTextField.topAnchor.constraint(equalTo: self.topAnchor),
-            userNameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            userNameTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
+            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+        // Add userNameTextField to stackView
+        stackView.addArrangedSubview(userNameTextField)
+        // Add paswordTextField to stackView
+        stackView.addArrangedSubview(paswordTextField)
     }
 }
 
@@ -60,6 +84,7 @@ extension LoginView: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userNameTextField.endEditing(true)
+        paswordTextField.endEditing(true)
         return true
     }
 
