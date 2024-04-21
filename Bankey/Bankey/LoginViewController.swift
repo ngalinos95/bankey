@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func setup() {
+        // Setup LoginView
         loginView.translatesAutoresizingMaskIntoConstraints = false
     }
 
