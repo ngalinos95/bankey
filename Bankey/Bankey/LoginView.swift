@@ -39,7 +39,7 @@ class LoginView: UIView {
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
         userNameTextField.placeholder = "User Name"
         userNameTextField.delegate = self
-        userNameTextField.borderStyle = .bezel
+//        userNameTextField.borderStyle = .bezel
         return userNameTextField
     }()
     // Create Password Text Field
@@ -48,9 +48,17 @@ class LoginView: UIView {
         paswordTextField.translatesAutoresizingMaskIntoConstraints = false
         paswordTextField.placeholder = "Password"
         paswordTextField.delegate = self
-        paswordTextField.borderStyle = .bezel
+//        paswordTextField.borderStyle = .bezel
         paswordTextField.isSecureTextEntry = true
         return paswordTextField
+    }()
+
+    // Create Divider View
+    lazy var dividerView: UIView = {
+        let dividerView = UIView()
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        dividerView.backgroundColor = .secondarySystemFill
+        return dividerView
     }()
 
 
@@ -60,20 +68,27 @@ extension LoginView {
     private func setup() {
         // SetUp UIView
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .orange
+        self.backgroundColor = .secondarySystemBackground
+        self.layer.cornerRadius = 5
+        self.clipsToBounds = true
+
     }
 
     private func layout() {
         // Add stackView
         self.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant:  -8),
+            dividerView.heightAnchor.constraint(equalToConstant: 1)
         ])
+
         // Add userNameTextField to stackView
         stackView.addArrangedSubview(userNameTextField)
+        // Add dividerView
+        stackView.addArrangedSubview(dividerView)
         // Add paswordTextField to stackView
         stackView.addArrangedSubview(paswordTextField)
     }
