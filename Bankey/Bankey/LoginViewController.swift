@@ -8,7 +8,8 @@
 import UIKit
 
 protocol LoginViewProtocol: AnyObject {
-    func handleErrorLabel(isVisible: Bool, withtext text: String)
+    var errorLabel: UILabel { get }
+    var loginButton: UIButton { get }
 }
 
 class LoginViewController: UIViewController, LoginViewProtocol {
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         let loginButton = UIButton(type: .system)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.configuration = .filled()
+        // Adds padding between image and button title
         loginButton.configuration?.imagePadding = 8
         loginButton.setTitle("Sign In", for: [])
         return loginButton
@@ -104,15 +106,6 @@ extension LoginViewController {
         // Add button  function
         presenter.loginButtonAction(userName: self.userName,
                                     password: self.password )
-    }
-
-    func handleErrorLabel(isVisible: Bool, withtext text: String) {
-        if isVisible {
-            errorLabel.isHidden = false
-            errorLabel.text = text
-        } else {
-            errorLabel.isHidden = true
-        }
     }
 }
 

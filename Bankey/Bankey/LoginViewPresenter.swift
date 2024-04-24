@@ -42,12 +42,11 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
         do {
             try credentialsValidation(userName, password)
             // enter here the code of handing the success state
-            view?.handleErrorLabel(isVisible: false, withtext: "")
+            handleSuccessfulLogin()
         } catch {
             // enter here the code of handing the failure state
-            view?.handleErrorLabel(isVisible: true, withtext: error.localizedDescription )
+            handleFailingogin(error: error)
         }
-
     }
 
     private func credentialsValidation(_ userName: String?, _ password: String?) throws {
@@ -60,6 +59,20 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
         if password != "test1234" {
             throw AuthenticationError.wrongCredentials
         }
-
     }
+
+    private func handleSuccessfulLogin() {
+        view?.errorLabel.isHidden = true
+        view?.loginButton.configuration?.showsActivityIndicator = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.view?.loginButton.configuration?.showsActivityIndicator = false
+        })
+    }
+
+    private func handleFailingogin(error: Error) {
+        view?.errorLabel.isHidden = false
+        view?.errorLabel.text = error.localizedDescription
+    }
+
+
 }
