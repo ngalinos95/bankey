@@ -11,6 +11,7 @@
 		CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */; };
 		CE25B1BC2BC7264F009C30E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BB2BC7264F009C30E7 /* Assets.xcassets */; };
 		CE25B1BF2BC7264F009C30E7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BE2BC7264F009C30E7 /* Base */; };
+		CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */; };
 		CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BEFE22BD42A8600B20C75 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		CE25B1BB2BC7264F009C30E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE25B1BE2BC7264F009C30E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE25B1C02BC7264F009C30E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		CE8BEFE22BD42A8600B20C75 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */,
+				CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */,
 				CE8BEFE22BD42A8600B20C75 /* LoginView.swift */,
 			);
 			name = Login;
@@ -153,6 +156,7 @@
 				CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
 				CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */,
+				CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

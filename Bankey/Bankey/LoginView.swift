@@ -20,9 +20,6 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-//    override var intrinsicContentSize: CGSize {
-//        return CGSize(width: 200, height: 200)
-//    }
     // MARK: Create UI Views
     // Create A Stack View
     lazy var stackView: UIStackView = {
@@ -39,7 +36,6 @@ class LoginView: UIView {
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
         userNameTextField.placeholder = "User Name"
         userNameTextField.delegate = self
-//        userNameTextField.borderStyle = .bezel
         return userNameTextField
     }()
     // Create Password Text Field
@@ -48,7 +44,6 @@ class LoginView: UIView {
         paswordTextField.translatesAutoresizingMaskIntoConstraints = false
         paswordTextField.placeholder = "Password"
         paswordTextField.delegate = self
-//        paswordTextField.borderStyle = .bezel
         paswordTextField.isSecureTextEntry = true
         return paswordTextField
     }()
@@ -60,8 +55,6 @@ class LoginView: UIView {
         dividerView.backgroundColor = .secondarySystemFill
         return dividerView
     }()
-
-
 }
 
 extension LoginView {
@@ -71,7 +64,6 @@ extension LoginView {
         self.backgroundColor = .secondarySystemBackground
         self.layer.cornerRadius = 5
         self.clipsToBounds = true
-
     }
 
     private func layout() {
@@ -104,11 +96,7 @@ extension LoginView: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        } else {
-            return false
-        }
+        return true
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
