@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol LoginViewPresenterProtocol {
     func attach(_ view: LoginViewProtocol)
     func loginButtonAction(userName: String?, password: String?)
