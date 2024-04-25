@@ -51,10 +51,9 @@ extension OnboardingContainerViewController {
         // Add child view controller to the parent view controller (Step 3)
         pageViewController.didMove(toParent: self)
 
-        let page1 = ViewController1()
-        let page2 = ViewController2()
-        let page3 = ViewController3()
-
+        let page1 = OnboardingViewController(imageName: "delorean", textLabel: "Page 1")
+        let page2 = OnboardingViewController(imageName: "thumbs", textLabel: "Page 2")
+        let page3 = OnboardingViewController(imageName: "world", textLabel: "PAge 3")
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
@@ -112,27 +111,5 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         guard let currentVC = self.currentVC else { return 0 }
         return pages.firstIndex(of: currentVC ) ?? 0
-    }
-}
-
-// MARK: - ViewControllers
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
-
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
     }
 }
