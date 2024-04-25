@@ -37,8 +37,29 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         setup()
         layout()
     }
+    // Main title
+    lazy var mainTitle: UILabel = {
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.text = "Bankey"
+        title.textAlignment = .center
+        title.font = .systemFont(ofSize: 26, weight: .bold)
+        title.textColor = .black
+        return title
+    }()
+    // Sub title
+    lazy var subTitle: UILabel = {
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.text = "Your premium \n source for all things banking"
+        title.numberOfLines = 2
+        title.textAlignment = .center
+        title.font = .systemFont(ofSize: 18)
+        title.textColor = .black
+        return title
+    }()
     // LoginView
-    let loginView = LoginView()
+    var loginView = LoginView()
     // LoginButton
     lazy var loginButton: UIButton = {
         let loginButton = UIButton(type: .system)
@@ -47,6 +68,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         // Adds padding between image and button title
         loginButton.configuration?.imagePadding = 8
         loginButton.setTitle("Sign In", for: [])
+        loginButton.addTarget(self,
+                              action: #selector(signInTapped),
+                              for: .primaryActionTriggered)
         return loginButton
     }()
     // Error Label
@@ -55,24 +79,18 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.textColor = .systemRed
         errorLabel.isHidden = true
+        errorLabel.text = " The input you have entered in invalid"
         return errorLabel
     }()
 }
 
 extension LoginViewController {
     private func setup() {
-        // Setup LoginView
         loginView.translatesAutoresizingMaskIntoConstraints = false
-        // Setup LoginButton
-        loginButton.setTitle("Sign In", for: [])
-        loginButton.addTarget(self,
-                              action: #selector(signInTapped),
-                              for: .primaryActionTriggered)
-        // Setup Error Label
-        errorLabel.text = " The input you have entered in invalid"
     }
 
     private func layout() {
+
         // Add LoginView
         view.addSubview(loginView)
         NSLayoutConstraint.activate([
@@ -82,6 +100,25 @@ extension LoginViewController {
             loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                 constant: -8)
         ])
+        // Add Sub title
+        view.addSubview(subTitle)
+        NSLayoutConstraint.activate([
+            subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            subTitle.bottomAnchor.constraint(equalTo: loginView.topAnchor,
+                                            constant: -12),
+            subTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                               constant: 16),
+            subTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                constant: -16)
+        ])
+        // Add Main title
+        view.addSubview(mainTitle)
+        NSLayoutConstraint.activate([
+            mainTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainTitle.bottomAnchor.constraint(equalTo: subTitle.topAnchor,
+                                            constant: -24),
+        ])
+
         // Add LoginButton
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
