@@ -56,7 +56,7 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
 
     func setup() {
-        view.backgroundColor = .systemPurple
+        view.backgroundColor = .systemBackground
     }
 
     func layout() {

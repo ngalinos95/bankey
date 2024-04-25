@@ -10,6 +10,7 @@ import UIKit
 protocol LoginViewProtocol: AnyObject {
     var errorLabel: UILabel { get }
     var loginButton: UIButton { get }
+    func pushToView(_ viewController: UIViewController)
 }
 
 class LoginViewController: UIViewController, LoginViewProtocol {
@@ -134,6 +135,10 @@ extension LoginViewController {
                                             constant: 16),
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+    }
+
+    func pushToView(_ viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

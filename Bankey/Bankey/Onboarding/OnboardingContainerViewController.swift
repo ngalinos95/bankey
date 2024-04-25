@@ -15,10 +15,7 @@ protocol OnboardingContainerProtocol: AnyObject {
 class OnboardingContainerViewController: UIViewController {
 
     var pages = [UIViewController]()
-    weak var currentVC: UIViewController? {
-        didSet {
-        }
-    }
+    weak var currentVC: UIViewController?
 
      init() {
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +31,18 @@ class OnboardingContainerViewController: UIViewController {
         return pageViewController
     }()
 
+    lazy var closeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Close", for: [])
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.addTarget(self,
+                              action: #selector(closeTapped),
+                              for: .primaryActionTriggered)
+        return button
+
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -42,8 +51,8 @@ class OnboardingContainerViewController: UIViewController {
 }
 
 extension OnboardingContainerViewController {
-    func setup() {
-        view.backgroundColor = .systemPurple
+    private func setup() {
+        view.backgroundColor = .systemBlue
         // Add child view controller to the parent view controller (Step 1)
         addChild(pageViewController)
         // Add child view controller to the parent view controller (Step 2)
@@ -60,8 +69,7 @@ extension OnboardingContainerViewController {
         currentVC = pages.first
     }
 
-    func layout() {
-
+    private func layout() {
 
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -78,6 +86,14 @@ extension OnboardingContainerViewController {
                                               animated: false,
                                               completion: nil)
         currentVC = pages.first
+
+        // Add Close Button
+        view.keyboardLayoutGuide.usesBottomSafeArea = false
+        view.addSubview(closeButton)
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 8)
+        ])
     }
 }
 
@@ -111,5 +127,12 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         guard let currentVC = self.currentVC else { return 0 }
         return pages.firstIndex(of: currentVC ) ?? 0
+    }
+}
+
+// MARK: - Actions
+extension OnboardingContainerViewController {
+    @objc func closeTapped(_ sender: UIButton) {
+        // empty
     }
 }

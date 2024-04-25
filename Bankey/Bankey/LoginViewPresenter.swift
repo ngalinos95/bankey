@@ -68,6 +68,7 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
         // We simulate the delay of a network call
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             self.view?.loginButton.configuration?.showsActivityIndicator = false
+            self.view?.pushToView(OnboardingContainerViewController())
         })
     }
 
