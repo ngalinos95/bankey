@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE066C8A2BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C892BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift */; };
 		CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */; };
+		CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C902BDB9F1100FB8FA3 /* APIService.swift */; };
+		CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C952BDBB01000FB8FA3 /* TestMocking.swift */; };
 		CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */; };
 		CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */; };
 		CE25B1BC2BC7264F009C30E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BB2BC7264F009C30E7 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		CE066C892BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		CE066C902BDB9F1100FB8FA3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CE066C952BDBB01000FB8FA3 /* TestMocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocking.swift; sourceTree = "<group>"; };
 		CE25B1AF2BC7264D009C30E7 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,31 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		CE066C8E2BDB9EB700FB8FA3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE066C942BDBAFED00FB8FA3 /* MockingViewModelTest */,
+				CE066C8F2BDB9EC100FB8FA3 /* Networking */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE066C8F2BDB9EC100FB8FA3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE066C902BDB9F1100FB8FA3 /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE066C942BDBAFED00FB8FA3 /* MockingViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				CE066C952BDBB01000FB8FA3 /* TestMocking.swift */,
+			);
+			path = MockingViewModelTest;
+			sourceTree = "<group>";
+		};
 		CE25B1A62BC7264D009C30E7 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */,
+				CE066C8E2BDB9EB700FB8FA3 /* Utils */,
 				CE8BEFE02BD42A2A00B20C75 /* Files */,
 				CE8BEFE12BD42A5F00B20C75 /* Login */,
 				CE066C882BDAC0C100FB8FA3 /* Onboarding */,
@@ -168,8 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */,
+				CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */,
 				CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
+				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,
 				CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */,
 				CE066C8A2BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift in Sources */,
 				CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */,
