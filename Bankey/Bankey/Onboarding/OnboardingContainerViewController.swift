@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-protocol OnboardingContainerProtocol: AnyObject {
-
-}
 
 protocol OnboardingRootProtocol: AnyObject {
     func didSkipOnboarding()
