@@ -6,13 +6,14 @@
 //
 
 import UIKit
-
+let appColor: UIColor = .systemTeal
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     // Navigation Section
     let loginVC = LoginViewController()
     let onboardingVC = OnboardingContainerViewController()
     let dummyVC = DummyViewController()
+    let mainVC = MainViewController()
     // Setup Delegate
     var window: UIWindow?
     func application(_ application: UIApplication,
@@ -26,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginVC.rootDelegate = self
         onboardingVC.rootDelegate = self
         dummyVC.logoutDelegate = self
-        window?.rootViewController = loginVC
+        window?.rootViewController = mainVC
+        mainVC.selectedIndex = 1
         return true
     }
 }

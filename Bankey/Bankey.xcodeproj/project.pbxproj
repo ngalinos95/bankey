@@ -13,6 +13,8 @@
 		CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C952BDBB01000FB8FA3 /* TestMocking.swift */; };
 		CE066CDB2BDC220100FB8FA3 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */; };
 		CE066CDD2BDC437D00FB8FA3 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */; };
+		CE066CDF2BDC539400FB8FA3 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */; };
+		CE066CE12BDC542800FB8FA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CE02BDC542800FB8FA3 /* MainViewController.swift */; };
 		CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */; };
 		CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */; };
 		CE25B1BC2BC7264F009C30E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BB2BC7264F009C30E7 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		CE066C952BDBB01000FB8FA3 /* TestMocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocking.swift; sourceTree = "<group>"; };
 		CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		CE066CE02BDC542800FB8FA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE25B1AF2BC7264D009C30E7 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 				CE066C942BDBAFED00FB8FA3 /* MockingViewModelTest */,
 				CE066C8F2BDB9EC100FB8FA3 /* Networking */,
 				CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */,
+				CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -104,10 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */,
-				CE066C8E2BDB9EB700FB8FA3 /* Utils */,
-				CE8BEFE02BD42A2A00B20C75 /* Files */,
 				CE8BEFE12BD42A5F00B20C75 /* Login */,
 				CE066C882BDAC0C100FB8FA3 /* Onboarding */,
+				CE066C8E2BDB9EB700FB8FA3 /* Utils */,
+				CE8BEFE02BD42A2A00B20C75 /* Files */,
+				CE066CE02BDC542800FB8FA3 /* MainViewController.swift */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -206,9 +212,11 @@
 				CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */,
 				CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */,
 				CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */,
+				CE066CE12BDC542800FB8FA3 /* MainViewController.swift in Sources */,
 				CE066CDB2BDC220100FB8FA3 /* DummyViewController.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
 				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,
+				CE066CDF2BDC539400FB8FA3 /* UIViewController+Utils.swift in Sources */,
 				CE066CDD2BDC437D00FB8FA3 /* LocalState.swift in Sources */,
 				CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */,
 				CE066C8A2BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift in Sources */,
