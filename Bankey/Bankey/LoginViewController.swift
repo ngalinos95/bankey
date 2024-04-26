@@ -10,11 +10,15 @@ import UIKit
 protocol LoginViewProtocol: AnyObject {
     var errorLabel: UILabel { get }
     var loginButton: UIButton { get }
-    func pushToView(_ viewController: UIViewController)
+    func didFinishLoginIn()
+}
+
+protocol LoginViewRootProtocol: AnyObject{
+    func didFinishLoginIn()
 }
 
 class LoginViewController: UIViewController, LoginViewProtocol {
-
+    weak var rootDelegate: LoginViewRootProtocol?
     private let presenter: LoginViewPresenterProtocol
     private var userName: String? {
         return loginView.userNameTextField.text
@@ -136,14 +140,15 @@ extension LoginViewController {
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
-
-    func pushToView(_ viewController: UIViewController) {
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
 }
 
 // MARK: Actions
-extension LoginViewController {
+extension LoginViewController: LoginViewRootProtocol {
+    func didFinishLoginIn() {
+        self.rootDelegate?.didFinishLoginIn()
+    }
+
+
     @objc func signInTapped(sender: UIButton) {
         // Add button  function
         presenter.loginButtonAction(userName: self.userName,

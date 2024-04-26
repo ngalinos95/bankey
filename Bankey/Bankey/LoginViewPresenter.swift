@@ -18,7 +18,6 @@ enum AuthenticationError: Error {
 }
 
 extension AuthenticationError: LocalizedError {
-
     var errorDescription: String? {
         switch self {
         case .emptyInput:
@@ -30,10 +29,7 @@ extension AuthenticationError: LocalizedError {
 }
 
 class LoginViewPresenter: LoginViewPresenterProtocol {
-
-
     weak private var view: LoginViewProtocol?
-
     func attach(_ view: LoginViewProtocol) {
         assert(self.view == nil, "Cannot attach view twice")
         self.view = view
@@ -68,7 +64,7 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
         // We simulate the delay of a network call
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             self.view?.loginButton.configuration?.showsActivityIndicator = false
-            self.view?.pushToView(OnboardingContainerViewController())
+            self.view?.didFinishLoginIn()
         })
     }
 

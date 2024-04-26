@@ -11,6 +11,9 @@
 		CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */; };
 		CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C902BDB9F1100FB8FA3 /* APIService.swift */; };
 		CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C952BDBB01000FB8FA3 /* TestMocking.swift */; };
+		CE066CD82BDC1D5900FB8FA3 /* OnboardingContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CD72BDC1D5900FB8FA3 /* OnboardingContainerPresenter.swift */; };
+		CE066CDB2BDC220100FB8FA3 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */; };
+		CE066CDD2BDC437D00FB8FA3 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */; };
 		CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */; };
 		CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */; };
 		CE25B1BC2BC7264F009C30E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BB2BC7264F009C30E7 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 		CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CE066C902BDB9F1100FB8FA3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		CE066C952BDBB01000FB8FA3 /* TestMocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocking.swift; sourceTree = "<group>"; };
+		CE066CD72BDC1D5900FB8FA3 /* OnboardingContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerPresenter.swift; sourceTree = "<group>"; };
+		CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		CE25B1AF2BC7264D009C30E7 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE25B1B22BC7264D009C30E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				CE066C892BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift */,
+				CE066CD72BDC1D5900FB8FA3 /* OnboardingContainerPresenter.swift */,
 				CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
@@ -59,6 +66,7 @@
 			children = (
 				CE066C942BDBAFED00FB8FA3 /* MockingViewModelTest */,
 				CE066C8F2BDB9EC100FB8FA3 /* Networking */,
+				CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 				CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */,
 				CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */,
 				CE8BEFE22BD42A8600B20C75 /* LoginView.swift */,
+				CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -200,11 +209,14 @@
 				CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */,
 				CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */,
 				CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */,
+				CE066CDB2BDC220100FB8FA3 /* DummyViewController.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
 				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,
+				CE066CDD2BDC437D00FB8FA3 /* LocalState.swift in Sources */,
 				CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */,
 				CE066C8A2BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift in Sources */,
 				CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */,
+				CE066CD82BDC1D5900FB8FA3 /* OnboardingContainerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

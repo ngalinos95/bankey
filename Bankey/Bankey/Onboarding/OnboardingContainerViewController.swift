@@ -12,8 +12,13 @@ protocol OnboardingContainerProtocol: AnyObject {
 
 }
 
-class OnboardingContainerViewController: UIViewController {
+protocol OnboardingRootProtocol: AnyObject {
+    func didSkipOnboarding()
+    func didCloseOnboarding()
+}
 
+class OnboardingContainerViewController: UIViewController {
+    weak var rootDelegate: OnboardingRootProtocol?
     var pages = [UIViewController]()
     weak var currentVC: UIViewController?
 
@@ -43,8 +48,21 @@ class OnboardingContainerViewController: UIViewController {
 
     }()
 
+    lazy var skipButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Skip", for: [])
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.addTarget(self,
+                              action: #selector(skipTapped),
+                              for: .primaryActionTriggered)
+        return button
+
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         setup()
         layout()
     }
@@ -59,10 +77,12 @@ extension OnboardingContainerViewController {
         view.addSubview(pageViewController.view)
         // Add child view controller to the parent view controller (Step 3)
         pageViewController.didMove(toParent: self)
-
-        let page1 = OnboardingViewController(imageName: "delorean", textLabel: "Page 1")
-        let page2 = OnboardingViewController(imageName: "thumbs", textLabel: "Page 2")
-        let page3 = OnboardingViewController(imageName: "world", textLabel: "PAge 3")
+        let label = "This screen simulates an onboarding screen"
+        let labe2 = "With a close button to return on the Login Page"
+        let labe3 = "And a Skip button to continue on the main app journey"
+        let page1 = OnboardingViewController(imageName: "delorean", textLabel: label)
+        let page2 = OnboardingViewController(imageName: "thumbs", textLabel: labe2)
+        let page3 = OnboardingViewController(imageName: "world", textLabel: labe3)
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
@@ -93,6 +113,12 @@ extension OnboardingContainerViewController {
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 8)
+        ])
+        // Add Skip Button
+        view.addSubview(skipButton)
+        NSLayoutConstraint.activate([
+            skipButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -28),
+            skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -8)
         ])
     }
 }
@@ -133,6 +159,10 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 // MARK: - Actions
 extension OnboardingContainerViewController {
     @objc func closeTapped(_ sender: UIButton) {
-        // empty
+        self.rootDelegate?.didCloseOnboarding()
+    }
+
+    @objc func skipTapped(_ sender: UIButton) {
+        self.rootDelegate?.didSkipOnboarding()
     }
 }

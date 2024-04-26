@@ -73,7 +73,5 @@ extension OnboardingViewController {
         ])
         stackView.addArrangedSubview(image)
         stackView.addArrangedSubview(label)
-
-
     }
 }
