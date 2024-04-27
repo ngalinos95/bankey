@@ -8,10 +8,28 @@
 import Foundation
 import UIKit
 
-class AccountSummaryViewController: UIViewController {
+protocol AccountSummaryViewProtocol: AnyObject {
+    func getAccounts(accounts: [AccountSummaryModel])
+}
 
+class AccountSummaryViewController: UIViewController {
+    var accounts: [AccountSummaryModel] = []
+    let presenter: AccountSummaryPresenterProtocol
+
+    init(presenter: AccountSummaryPresenterProtocol = AccountSummaryPresenter()){
+    
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.attach(self)
+        presenter.fetchAccountSummaryModels()
         setup()
         setupHeaderView()
     }
@@ -71,11 +89,12 @@ extension AccountSummaryViewController: UITableViewDataSource {
                                                        for: indexPath) as? AccountSummaryCell else {
             return UITableViewCell()
         }
+        cell.configure(uiModel: accounts[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return accounts.count
     }
 }
 
@@ -84,3 +103,11 @@ extension AccountSummaryViewController: UITableViewDelegate {
 
     }
 }
+
+extension AccountSummaryViewController: AccountSummaryViewProtocol {
+    func getAccounts(accounts: [AccountSummaryModel]) {
+        self.accounts = accounts
+        self.tableView.reloadData()
+    }
+}
+

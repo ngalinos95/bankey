@@ -167,3 +167,21 @@ extension AccountSummaryCell {
         return rootString
     }
 }
+ // MARK: - Configure
+extension AccountSummaryCell {
+    func configure(uiModel: AccountSummaryModel) {
+        typeLabel.text = uiModel.accountType.rawValue
+        nameLabel.text = uiModel.accountName
+        balanceLabel.text = uiModel.balanceType
+        balanceAmmount.attributedText = makeFormattedBalance(dollars: uiModel.balanceDolars,
+                                                             cents: uiModel.balanceCents)
+        switch uiModel.accountType {
+        case .Banking:
+            divider.backgroundColor = appColor
+        case .CreditCard:
+            divider.backgroundColor = .systemOrange
+        case .Investment:
+            divider.backgroundColor = .systemPurple
+        }
+    }
+}
