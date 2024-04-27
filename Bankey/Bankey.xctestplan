@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "CA01F5EF-E878-48E1-8B2E-D9D3C0C3AEFB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Bankey.xcodeproj",
+      "identifier" : "CE25B1AE2BC7264D009C30E7",
+      "name" : "Bankey"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Bankey.xcodeproj",
+        "identifier" : "CE826D3A2BDD832E003DA75A",
+        "name" : "BankeyTests"
+      }
+    }
+  ],
+  "version" : 1
+}

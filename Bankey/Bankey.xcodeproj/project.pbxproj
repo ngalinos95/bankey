@@ -66,6 +66,7 @@
 		CE826D3B2BDD832E003DA75A /* BankeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryPresenterTests.swift; sourceTree = "<group>"; };
 		CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerMock.swift; sourceTree = "<group>"; };
+		CE826D4A2BDD8901003DA75A /* Bankey.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Bankey.xctestplan; sourceTree = "<group>"; };
 		CE8BEFE22BD42A8600B20C75 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +127,7 @@
 		CE25B1A62BC7264D009C30E7 = {
 			isa = PBXGroup;
 			children = (
+				CE826D4A2BDD8901003DA75A /* Bankey.xctestplan */,
 				CE25B1B12BC7264D009C30E7 /* Bankey */,
 				CE826D3C2BDD832E003DA75A /* BankeyTests */,
 				CE25B1B02BC7264D009C30E7 /* Products */,
