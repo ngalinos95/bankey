@@ -10,55 +10,58 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
+    let games = [
+        "Pacman",
+        "Space Invaders",
+        "Space Patrol",
+    ]
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
+        super.viewDidLoad()
         setup()
-        layout()
     }
-
-// MARK: Views
-
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+// MARK: - Views
+    lazy var tableView : UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
-
-    lazy var label: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 24)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
 }
 
-// MARK: - Setup
 extension AccountSummaryViewController {
 
     private func setup() {
-        self.view.backgroundColor = .systemBackground
-        label.text = "Welcome"
+        setupTableView()
     }
 
-    private func layout() {
-        // StackView
-        view.addSubview(stackView)
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        // Label
-        stackView.addArrangedSubview(label)
+    }
+}
+
+extension AccountSummaryViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = games[indexPath.row]
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+}
+
+extension AccountSummaryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
 }
