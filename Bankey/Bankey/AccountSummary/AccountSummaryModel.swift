@@ -1,5 +1,5 @@
 //
-//  AccountSummaryUIModel.swift
+//  AccountSummaryModel.swift
 //  Bankey
 //
 //  Created by Nikos Galinos on 27/4/24.

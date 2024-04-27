@@ -31,7 +31,6 @@ class AccountSummaryViewController: UIViewController {
         presenter.attach(self)
         presenter.fetchAccountSummaryModels()
         setup()
-        setupHeaderView()
     }
 // MARK: - Views
     lazy var tableView : UITableView = {
@@ -45,6 +44,7 @@ extension AccountSummaryViewController {
 
     private func setup() {
         setupTableView()
+        setupHeaderView()
         setupFooterView()
     }
 
@@ -56,7 +56,7 @@ extension AccountSummaryViewController {
                            forCellReuseIdentifier: AccountSummaryCell.reuseID)
         tableView.rowHeight = AccountSummaryCell.rowHeight
 
-
+        //Add the tableView to viewController
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -76,7 +76,7 @@ extension AccountSummaryViewController {
         tableView.tableHeaderView = headerView
     }
 
-    // we want the footer to be empty and not shown
+    // We want the footer to be empty and not shown
     private func setupFooterView() {
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.isHidden = true

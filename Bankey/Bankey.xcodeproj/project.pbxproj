@@ -24,7 +24,7 @@
 		CE4723092BDD2444000D0DB4 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4723082BDD2444000D0DB4 /* AccountSummaryHeaderView.xib */; };
 		CE47230E2BDD38ED000D0DB4 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47230D2BDD38ED000D0DB4 /* AccountSummaryCell.swift */; };
 		CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */; };
-		CE826D302BDD6ACA003DA75A /* AccountSummaryUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D2F2BDD6ACA003DA75A /* AccountSummaryUIModel.swift */; };
+		CE826D302BDD6ACA003DA75A /* AccountSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */; };
 		CE826D362BDD6E07003DA75A /* AccountSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */; };
 		CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */; };
 		CE826D492BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */; };
@@ -61,7 +61,7 @@
 		CE4723082BDD2444000D0DB4 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		CE47230D2BDD38ED000D0DB4 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
-		CE826D2F2BDD6ACA003DA75A /* AccountSummaryUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryUIModel.swift; sourceTree = "<group>"; };
+		CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryModel.swift; sourceTree = "<group>"; };
 		CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryPresenter.swift; sourceTree = "<group>"; };
 		CE826D3B2BDD832E003DA75A /* BankeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryPresenterTests.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 			children = (
 				CE4723002BDD157A000D0DB4 /* AccountSummaryViewController.swift */,
 				CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */,
-				CE826D2F2BDD6ACA003DA75A /* AccountSummaryUIModel.swift */,
+				CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */,
 				CE47230A2BDD3819000D0DB4 /* AccountSummaryHeader */,
 				CE47230C2BDD3841000D0DB4 /* AccountSummaryCells */,
 			);
@@ -334,7 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE826D302BDD6ACA003DA75A /* AccountSummaryUIModel.swift in Sources */,
+				CE826D302BDD6ACA003DA75A /* AccountSummaryModel.swift in Sources */,
 				CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */,
 				CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */,
 				CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */,
