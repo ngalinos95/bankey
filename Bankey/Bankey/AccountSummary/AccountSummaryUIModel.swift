@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-enum AccountType: String {
+enum AccountType: String, Equatable {
     case Banking
     case CreditCard
     case Investment
 }
 
-struct AccountSummaryModel {
+struct AccountSummaryModel: Equatable {
         let accountType: AccountType
         let accountName: String
         let balanceType: String

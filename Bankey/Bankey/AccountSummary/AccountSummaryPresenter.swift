@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol AccountSummaryPresenterProtocol {
     func attach(_ view: AccountSummaryViewProtocol)
     func fetchAccountSummaryModels()
