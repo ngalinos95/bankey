@@ -124,7 +124,7 @@ extension AccountSummaryCell {
         // Balance Container
         contentView.addSubview(balanceContainer)
         NSLayoutConstraint.activate([
-            balanceContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            balanceContainer.topAnchor.constraint(equalTo: typeLabel.topAnchor),
             balanceContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         // Stack View
@@ -145,6 +145,9 @@ extension AccountSummaryCell {
         // Balance label + Amount
         stackView.addArrangedSubview(balanceLabel)
         stackView.addArrangedSubview(balanceAmmount)
+        NSLayoutConstraint.activate([
+            balanceLabel.topAnchor.constraint(equalTo: stackView.topAnchor)
+        ])
     }
 
 }
