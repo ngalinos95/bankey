@@ -17,15 +17,15 @@ class AccountSummaryViewController: UIViewController {
     let presenter: AccountSummaryPresenterProtocol
 
     init(presenter: AccountSummaryPresenterProtocol = AccountSummaryPresenter()){
-    
+
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attach(self)
@@ -33,13 +33,23 @@ class AccountSummaryViewController: UIViewController {
         setup()
     }
 // MARK: - Views
+    // Table View
     lazy var tableView : UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    // Logout Button
+    lazy var logoutButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Logout",
+                                     style: .plain,
+                                     target: self,
+                                     action: #selector(logoutTapped))
+        button.tintColor = .label
+        return button
+    }()
 }
-
+// MARK: - Setup
 extension AccountSummaryViewController {
 
     private func setup() {
@@ -83,11 +93,15 @@ extension AccountSummaryViewController {
         tableView.tableFooterView?.isHidden = true
     }
 }
+// MARK: - Delegates Conformation
 
 extension AccountSummaryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID,
-                                                       for: indexPath) as? AccountSummaryCell else {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: AccountSummaryCell.reuseID,
+            for: indexPath
+        ) as? AccountSummaryCell else {
             return UITableViewCell()
         }
         cell.configure(uiModel: accounts[indexPath.row])
@@ -109,6 +123,13 @@ extension AccountSummaryViewController: AccountSummaryViewProtocol {
     func getAccounts(accounts: [AccountSummaryModel]) {
         self.accounts = accounts
         self.tableView.reloadData()
+    }
+}
+
+// MARK: - Actions
+extension AccountSummaryViewController {
+    @objc func logoutTapped() {
+
     }
 }
 
