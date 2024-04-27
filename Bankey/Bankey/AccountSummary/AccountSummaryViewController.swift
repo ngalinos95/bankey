@@ -31,6 +31,7 @@ class AccountSummaryViewController: UIViewController {
         presenter.attach(self)
         presenter.fetchAccountSummaryModels()
         setup()
+        layout()
     }
 // MARK: - Views
     // Table View
@@ -51,6 +52,10 @@ class AccountSummaryViewController: UIViewController {
 }
 // MARK: - Setup
 extension AccountSummaryViewController {
+
+    private func layout() {
+        navigationItem.rightBarButtonItem = logoutButton
+    }
 
     private func setup() {
         setupTableView()
@@ -129,7 +134,7 @@ extension AccountSummaryViewController: AccountSummaryViewProtocol {
 // MARK: - Actions
 extension AccountSummaryViewController {
     @objc func logoutTapped() {
-
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
 

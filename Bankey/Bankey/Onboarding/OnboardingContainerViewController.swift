@@ -103,7 +103,6 @@ extension OnboardingContainerViewController {
                                               animated: false,
                                               completion: nil)
         currentVC = pages.first
-
         // Add Close Button
         view.keyboardLayoutGuide.usesBottomSafeArea = false
         view.addSubview(closeButton)

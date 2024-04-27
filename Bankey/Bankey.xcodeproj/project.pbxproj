@@ -27,6 +27,7 @@
 		CE826D362BDD6E07003DA75A /* AccountSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */; };
 		CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */; };
 		CE826D492BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */; };
+		CE826D4C2BDD9BBF003DA75A /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */; };
 		CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BEFE22BD42A8600B20C75 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryPresenterTests.swift; sourceTree = "<group>"; };
 		CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerMock.swift; sourceTree = "<group>"; };
 		CE826D4A2BDD8901003DA75A /* Bankey.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Bankey.xctestplan; sourceTree = "<group>"; };
+		CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		CE8BEFE22BD42A8600B20C75 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				CE066C8F2BDB9EC100FB8FA3 /* Networking */,
 				CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */,
 				CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */,
+				CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE826D302BDD6ACA003DA75A /* AccountSummaryModel.swift in Sources */,
+				CE826D4C2BDD9BBF003DA75A /* NSNotificationName.swift in Sources */,
 				CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */,
 				CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */,
 				CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */,

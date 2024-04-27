@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         loginVC.rootDelegate = self
         onboardingVC.rootDelegate = self
+        registerForNotifcations()
         window?.rootViewController = loginVC
         return true
     }
@@ -65,9 +66,17 @@ extension AppDelegate: OnboardingRootProtocol {
         changeRootViewController(loginVC)
     }
 }
-// TODO: Trigger with Notification Center
+
 extension AppDelegate {
-    func didLogout() {
+    @objc func didLogout() {
         changeRootViewController(loginVC)
     }
 }
+
+// MARK: - Notifications Center
+extension AppDelegate {
+    private func registerForNotifcations() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
+    }
+}
+
