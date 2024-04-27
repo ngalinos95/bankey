@@ -11,7 +11,6 @@
 		CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */; };
 		CE066C912BDB9F1100FB8FA3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C902BDB9F1100FB8FA3 /* APIService.swift */; };
 		CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066C952BDBB01000FB8FA3 /* TestMocking.swift */; };
-		CE066CDB2BDC220100FB8FA3 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */; };
 		CE066CDD2BDC437D00FB8FA3 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */; };
 		CE066CDF2BDC539400FB8FA3 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */; };
 		CE066CE12BDC542800FB8FA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE066CE02BDC542800FB8FA3 /* MainViewController.swift */; };
@@ -46,7 +45,6 @@
 		CE066C8B2BDACDC200FB8FA3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CE066C902BDB9F1100FB8FA3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		CE066C952BDBB01000FB8FA3 /* TestMocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocking.swift; sourceTree = "<group>"; };
-		CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		CE066CE02BDC542800FB8FA3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				CE25B1B62BC7264D009C30E7 /* LoginViewController.swift */,
 				CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */,
 				CE8BEFE22BD42A8600B20C75 /* LoginView.swift */,
-				CE066CDA2BDC220100FB8FA3 /* DummyViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 				CE066C8C2BDACDC200FB8FA3 /* OnboardingViewController.swift in Sources */,
 				CE066CE12BDC542800FB8FA3 /* MainViewController.swift in Sources */,
 				CE4723012BDD157B000D0DB4 /* AccountSummaryViewController.swift in Sources */,
-				CE066CDB2BDC220100FB8FA3 /* DummyViewController.swift in Sources */,
 				CE47230E2BDD38ED000D0DB4 /* AccountSummaryCell.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
 				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,

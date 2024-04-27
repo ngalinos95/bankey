@@ -12,7 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Navigation Section
     let loginVC = LoginViewController()
     let onboardingVC = OnboardingContainerViewController()
-    let dummyVC = DummyViewController()
     let mainVC = MainViewController()
     // Setup Delegate
     var window: UIWindow?
@@ -21,13 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        let mainPage = OnboardingContainerViewController()
-//        let nav = UINavigationController(rootViewController: mainPage)
         window?.backgroundColor = .systemBackground
         loginVC.rootDelegate = self
         onboardingVC.rootDelegate = self
-        dummyVC.logoutDelegate = self
-        window?.rootViewController = AccountSummaryViewController()
+        window?.rootViewController = loginVC
         return true
     }
 }
@@ -69,8 +65,8 @@ extension AppDelegate: OnboardingRootProtocol {
         changeRootViewController(loginVC)
     }
 }
-
-extension AppDelegate: LogoutDelegate {
+// TODO: Trigger with Notification Center
+extension AppDelegate {
     func didLogout() {
         changeRootViewController(loginVC)
     }

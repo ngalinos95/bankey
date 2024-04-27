@@ -27,19 +27,11 @@ class MainViewController: UITabBarController {
         let summaryNC = UINavigationController(rootViewController: summaryVC)
         let moneyNC = UINavigationController(rootViewController: moneyVC)
         let moreNC = UINavigationController(rootViewController: moreVC)
-//        summaryNC.setStatusBar()
-        hideNavigationBarLine(summaryNC.navigationBar)
+        summaryNC.setStatusBar()
 
         let tabBarList = [summaryNC, moneyNC, moreNC]
 
         self.viewControllers = tabBarList
-    }
-
-    private func hideNavigationBarLine(_ navigationBar: UINavigationBar) {
-        let img = UIImage()
-        navigationBar.shadowImage = img
-        navigationBar.setBackgroundImage(img, for: .default)
-        navigationBar.isTranslucent = false
     }
 
     private func setupTabBar() {
