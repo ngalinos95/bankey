@@ -10,7 +10,8 @@ import UIKit
 import UIKit
 
 extension UIViewController {
-    func setStatusBar() {
+    // maybe this need deletion
+    func setStatusBar1() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
         navBarAppearance.backgroundColor = appColor
@@ -22,5 +23,15 @@ extension UIViewController {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
         let image = UIImage(systemName: imageName, withConfiguration: configuration)
         tabBarItem = UITabBarItem(title: title, image: image, tag: tag)
+    }
+}
+
+extension UINavigationController {
+    func setStatusBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
+        navBarAppearance.backgroundColor = appColor
+        navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationBar.standardAppearance = navBarAppearance
     }
 }

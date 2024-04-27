@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginVC.rootDelegate = self
         onboardingVC.rootDelegate = self
         dummyVC.logoutDelegate = self
-        window?.rootViewController = mainVC
-        mainVC.selectedIndex = 1
+        window?.rootViewController = AccountSummaryViewController()
         return true
     }
 }
@@ -53,7 +52,8 @@ extension AppDelegate {
 extension AppDelegate: LoginViewRootProtocol {
     func didFinishLoginIn() {
         if LocalState.hasOnboarded {
-            changeRootViewController(dummyVC)
+            mainVC.selectedIndex = 0
+            changeRootViewController(mainVC)
         } else {
             changeRootViewController(onboardingVC)
         }
@@ -63,7 +63,7 @@ extension AppDelegate: LoginViewRootProtocol {
 extension AppDelegate: OnboardingRootProtocol {
     func didSkipOnboarding() {
         LocalState.hasOnboarded = true
-        changeRootViewController(dummyVC)
+        changeRootViewController(mainVC)
     }
     func didCloseOnboarding() {
         changeRootViewController(loginVC)

@@ -32,7 +32,7 @@ class MainViewController: UITabBarController {
 
         let tabBarList = [summaryNC, moneyNC, moreNC]
 
-        viewControllers = tabBarList
+        self.viewControllers = tabBarList
     }
 
     private func hideNavigationBarLine(_ navigationBar: UINavigationBar) {
@@ -43,16 +43,11 @@ class MainViewController: UITabBarController {
     }
 
     private func setupTabBar() {
-        tabBar.tintColor = appColor
-        tabBar.isTranslucent = true
+        self.tabBar.isTranslucent = false
+        self.tabBar.tintColor = appColor
     }
 }
 
-class AccountSummaryViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
-    }
-}
 
 class MoveMoneyViewController: UIViewController {
     override func viewDidLoad() {
