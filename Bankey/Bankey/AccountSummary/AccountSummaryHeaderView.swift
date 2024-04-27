@@ -28,10 +28,10 @@ class AccountSummaryHeaderView: UIView {
     private func commonInit() {
         let bundle = Bundle(for: AccountSummaryHeaderView.self)
         bundle.loadNibNamed("AccountSummaryHeaderView", owner: self, options: nil)
-        addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = appColor
         
-        contentView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(contentView)
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: self.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),

@@ -19,6 +19,7 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupHeaderView()
     }
 // MARK: - Views
     lazy var tableView : UITableView = {
@@ -45,6 +46,16 @@ extension AccountSummaryViewController {
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+
+    private func setupHeaderView() {
+        let headerView = AccountSummaryHeaderView(frame: .zero)
+
+        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        headerView.frame.size = size
+
+        tableView.tableHeaderView = headerView
     }
 }
 

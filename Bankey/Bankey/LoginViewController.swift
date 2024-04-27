@@ -91,7 +91,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 
 extension LoginViewController {
     private func setup() {
-        loginView.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private func layout() {
