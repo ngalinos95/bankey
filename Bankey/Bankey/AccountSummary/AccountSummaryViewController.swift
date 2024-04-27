@@ -10,12 +10,6 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
 
-    let games = [
-        "Pacman",
-        "Space Invaders",
-        "Space Patrol",
-    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -33,11 +27,17 @@ extension AccountSummaryViewController {
 
     private func setup() {
         setupTableView()
+        setupFooterView()
     }
 
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        // Register the cell
+        tableView.register(AccountSummaryCell.self,
+                           forCellReuseIdentifier: AccountSummaryCell.reuseID)
+        tableView.rowHeight = AccountSummaryCell.rowHeight
+
 
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -57,17 +57,25 @@ extension AccountSummaryViewController {
 
         tableView.tableHeaderView = headerView
     }
+
+    // we want the footer to be empty and not shown
+    private func setupFooterView() {
+        tableView.tableFooterView = UIView()
+        tableView.tableFooterView?.isHidden = true
+    }
 }
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID,
+                                                       for: indexPath) as? AccountSummaryCell else {
+            return UITableViewCell()
+        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return 10
     }
 }
 
