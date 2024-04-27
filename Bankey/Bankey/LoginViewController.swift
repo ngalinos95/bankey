@@ -152,6 +152,10 @@ extension LoginViewController: LoginViewRootProtocol {
         // Add button  function
         presenter.loginButtonAction(userName: self.userName,
                                     password: self.password )
+        // empty the textfields
+        loginView.paswordTextField.text = nil
+        loginView.userNameTextField.text = nil
+
     }
 }
 

@@ -44,7 +44,7 @@ class LoginView: UIView {
         paswordTextField.translatesAutoresizingMaskIntoConstraints = false
         paswordTextField.placeholder = "Password"
         paswordTextField.delegate = self
-        paswordTextField.isSecureTextEntry = true
+        paswordTextField.enablePasswordToggle()
         return paswordTextField
     }()
 

@@ -28,6 +28,7 @@
 		CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */; };
 		CE826D492BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */; };
 		CE826D4C2BDD9BBF003DA75A /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */; };
+		CE826D4E2BDDA5CA003DA75A /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D4D2BDDA5CA003DA75A /* UITextField+SecureToggle.swift */; };
 		CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BEFE22BD42A8600B20C75 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerMock.swift; sourceTree = "<group>"; };
 		CE826D4A2BDD8901003DA75A /* Bankey.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Bankey.xctestplan; sourceTree = "<group>"; };
 		CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		CE826D4D2BDDA5CA003DA75A /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		CE8BEFE22BD42A8600B20C75 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,9 +104,10 @@
 			children = (
 				CE066C942BDBAFED00FB8FA3 /* MockingViewModelTest */,
 				CE066C8F2BDB9EC100FB8FA3 /* Networking */,
-				CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */,
 				CE066CDE2BDC539400FB8FA3 /* UIViewController+Utils.swift */,
+				CE066CDC2BDC437D00FB8FA3 /* LocalState.swift */,
 				CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */,
+				CE826D4D2BDDA5CA003DA75A /* UITextField+SecureToggle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				CE066CE12BDC542800FB8FA3 /* MainViewController.swift in Sources */,
 				CE4723012BDD157B000D0DB4 /* AccountSummaryViewController.swift in Sources */,
 				CE47230E2BDD38ED000D0DB4 /* AccountSummaryCell.swift in Sources */,
+				CE826D4E2BDDA5CA003DA75A /* UITextField+SecureToggle.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
 				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,
 				CE066CDF2BDC539400FB8FA3 /* UIViewController+Utils.swift in Sources */,
