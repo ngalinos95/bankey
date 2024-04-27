@@ -20,6 +20,8 @@
 		CE25B1BC2BC7264F009C30E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BB2BC7264F009C30E7 /* Assets.xcassets */; };
 		CE25B1BF2BC7264F009C30E7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE25B1BE2BC7264F009C30E7 /* Base */; };
 		CE4723012BDD157B000D0DB4 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4723002BDD157A000D0DB4 /* AccountSummaryViewController.swift */; };
+		CE4723032BDD239E000D0DB4 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4723022BDD239E000D0DB4 /* AccountSummaryHeaderView.swift */; };
+		CE4723092BDD2444000D0DB4 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4723082BDD2444000D0DB4 /* AccountSummaryHeaderView.xib */; };
 		CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */; };
 		CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BEFE22BD42A8600B20C75 /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		CE25B1BE2BC7264F009C30E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE25B1C02BC7264F009C30E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4723002BDD157A000D0DB4 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
+		CE4723022BDD239E000D0DB4 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
+		CE4723082BDD2444000D0DB4 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		CE4833232BD9827E0002C6A6 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		CE8BEFE22BD42A8600B20C75 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				CE4723002BDD157A000D0DB4 /* AccountSummaryViewController.swift */,
+				CE4723022BDD239E000D0DB4 /* AccountSummaryHeaderView.swift */,
+				CE4723082BDD2444000D0DB4 /* AccountSummaryHeaderView.xib */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -208,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4723092BDD2444000D0DB4 /* AccountSummaryHeaderView.xib in Resources */,
 				CE25B1BC2BC7264F009C30E7 /* Assets.xcassets in Resources */,
 				CE25B1BF2BC7264F009C30E7 /* Base in Resources */,
 			);
@@ -230,6 +237,7 @@
 				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,
 				CE066CDF2BDC539400FB8FA3 /* UIViewController+Utils.swift in Sources */,
 				CE066CDD2BDC437D00FB8FA3 /* LocalState.swift in Sources */,
+				CE4723032BDD239E000D0DB4 /* AccountSummaryHeaderView.swift in Sources */,
 				CE25B1B32BC7264D009C30E7 /* AppDelegate.swift in Sources */,
 				CE066C8A2BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift in Sources */,
 				CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */,
