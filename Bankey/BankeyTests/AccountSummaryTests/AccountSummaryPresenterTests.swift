@@ -10,10 +10,8 @@ import XCTest
 
 final class AccountSummaryPresenterTests: XCTestCase {
     // This is an example on how we can test a presenter
-    /** If we wanted to be correct the assertion should have included the
-     return uiModel from the fetchAccountSummaryModels function testing that the returned UImodel is the one expected
-     that would be more reasonable on a real life example where the fetch functions calls an actual API and we should have provided
-     a mock service with a mock response on return
+    /**  The actual  model that is given to the view is given from the datsource
+         and the correctness of the model will be tested on the dataSource tests
      */
 
     var sut: AccountSummaryPresenter!
@@ -31,7 +29,7 @@ final class AccountSummaryPresenterTests: XCTestCase {
         self.sut = nil
     }
 
-    func fetchAccountSummaryModels() async {
+    func testFetchAccountSummaryModels() async {
         // Given
         sut.attach(view)
         //When
