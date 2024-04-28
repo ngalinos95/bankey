@@ -1,0 +1,30 @@
+[
+  {
+    "accountType": "CreditCard",
+    "accountName": "Checking",
+    "balanceType": "Credit",
+    "balanceDollars": "7541",
+    "balanceCents": "32"
+  },
+  {
+    "accountType": "Investment",
+    "accountName": "Investment",
+    "balanceType": "Savings",
+    "balanceDollars": "123",
+    "balanceCents": "49"
+  },
+  {
+    "accountType": "CreditCard",
+    "accountName": "Loan",
+    "balanceType": "Current",
+    "balanceDollars": "9876",
+    "balanceCents": "11"
+  },
+  {
+    "accountType": "Investment",
+    "accountName": "Credit Line",
+    "balanceType": "Current",
+    "balanceDollars": "2294",
+    "balanceCents": "73"
+  }
+]

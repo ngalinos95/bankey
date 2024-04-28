@@ -53,7 +53,7 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
         if password.isEmpty || userName.isEmpty {
             throw AuthenticationError.emptyInput
         }
-        if password != "test1234" {
+        if password != "1234" {
             throw AuthenticationError.wrongCredentials
         }
     }

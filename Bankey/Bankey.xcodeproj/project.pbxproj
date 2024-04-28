@@ -30,6 +30,10 @@
 		CE826D4C2BDD9BBF003DA75A /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */; };
 		CE826D4E2BDDA5CA003DA75A /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D4D2BDDA5CA003DA75A /* UITextField+SecureToggle.swift */; };
 		CE8BEFE32BD42A8600B20C75 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BEFE22BD42A8600B20C75 /* LoginView.swift */; };
+		CEAA870B2BDE924500BAD542 /* AccountSummaryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA870A2BDE924500BAD542 /* AccountSummaryDataSource.swift */; };
+		CEAA870E2BDE9B3D00BAD542 /* MockAccountsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAA870D2BDE9B3D00BAD542 /* MockAccountsResponse.json */; };
+		CEAA87102BDE9BC300BAD542 /* AccountSummaryDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA870F2BDE9BC300BAD542 /* AccountSummaryDataSourceMock.swift */; };
+		CEAA87132BDE9D9F00BAD542 /* MockResponseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA87122BDE9D9F00BAD542 /* MockResponseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		CE826D4B2BDD9BBF003DA75A /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		CE826D4D2BDDA5CA003DA75A /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		CE8BEFE22BD42A8600B20C75 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CEAA870A2BDE924500BAD542 /* AccountSummaryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryDataSource.swift; sourceTree = "<group>"; };
+		CEAA870D2BDE9B3D00BAD542 /* MockAccountsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockAccountsResponse.json; sourceTree = "<group>"; };
+		CEAA870F2BDE9BC300BAD542 /* AccountSummaryDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryDataSourceMock.swift; sourceTree = "<group>"; };
+		CEAA87122BDE9D9F00BAD542 /* MockResponseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,9 +172,9 @@
 		CE4722FF2BDD1556000D0DB4 /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
+				CEAA870C2BDE925600BAD542 /* DataSource */,
 				CE4723002BDD157A000D0DB4 /* AccountSummaryViewController.swift */,
 				CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */,
-				CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */,
 				CE47230A2BDD3819000D0DB4 /* AccountSummaryHeader */,
 				CE47230C2BDD3841000D0DB4 /* AccountSummaryCells */,
 			);
@@ -193,6 +201,7 @@
 		CE826D3C2BDD832E003DA75A /* BankeyTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEAA87112BDE9D5A00BAD542 /* TestUtils */,
 				CE826D442BDD8338003DA75A /* AccountSummaryTests */,
 			);
 			path = BankeyTests;
@@ -210,7 +219,9 @@
 		CE826D472BDD83C2003DA75A /* AccountSummaryMocks */ = {
 			isa = PBXGroup;
 			children = (
+				CEAA870D2BDE9B3D00BAD542 /* MockAccountsResponse.json */,
 				CE826D482BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift */,
+				CEAA870F2BDE9BC300BAD542 /* AccountSummaryDataSourceMock.swift */,
 			);
 			path = AccountSummaryMocks;
 			sourceTree = "<group>";
@@ -233,6 +244,23 @@
 				CE8BEFE22BD42A8600B20C75 /* LoginView.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		CEAA870C2BDE925600BAD542 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				CEAA870A2BDE924500BAD542 /* AccountSummaryDataSource.swift */,
+				CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		CEAA87112BDE9D5A00BAD542 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				CEAA87122BDE9D9F00BAD542 /* MockResponseFactory.swift */,
+			);
+			path = TestUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAA870E2BDE9B3D00BAD542 /* MockAccountsResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +375,7 @@
 				CE4723012BDD157B000D0DB4 /* AccountSummaryViewController.swift in Sources */,
 				CE47230E2BDD38ED000D0DB4 /* AccountSummaryCell.swift in Sources */,
 				CE826D4E2BDDA5CA003DA75A /* UITextField+SecureToggle.swift in Sources */,
+				CEAA870B2BDE924500BAD542 /* AccountSummaryDataSource.swift in Sources */,
 				CE25B1B72BC7264D009C30E7 /* LoginViewController.swift in Sources */,
 				CE066C962BDBB01000FB8FA3 /* TestMocking.swift in Sources */,
 				CE066CDF2BDC539400FB8FA3 /* UIViewController+Utils.swift in Sources */,
@@ -362,7 +392,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAA87102BDE9BC300BAD542 /* AccountSummaryDataSourceMock.swift in Sources */,
 				CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */,
+				CEAA87132BDE9D9F00BAD542 /* MockResponseFactory.swift in Sources */,
 				CE826D492BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

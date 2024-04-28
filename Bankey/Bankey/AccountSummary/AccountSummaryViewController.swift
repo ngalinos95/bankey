@@ -29,7 +29,9 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attach(self)
-        presenter.fetchAccountSummaryModels()
+        Task {
+          await presenter.fetchAccountSummaryModels()
+        }
         setup()
         layout()
     }

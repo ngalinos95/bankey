@@ -173,7 +173,7 @@ extension AccountSummaryCell {
         typeLabel.text = uiModel.accountType.rawValue
         nameLabel.text = uiModel.accountName
         balanceLabel.text = uiModel.balanceType
-        balanceAmmount.attributedText = makeFormattedBalance(dollars: uiModel.balanceDolars,
+        balanceAmmount.attributedText = makeFormattedBalance(dollars: uiModel.balanceDollars,
                                                              cents: uiModel.balanceCents)
         switch uiModel.accountType {
         case .Banking:

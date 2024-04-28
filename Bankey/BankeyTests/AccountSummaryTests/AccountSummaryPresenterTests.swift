@@ -18,11 +18,12 @@ final class AccountSummaryPresenterTests: XCTestCase {
 
     var sut: AccountSummaryPresenter!
     var view: AccountSummaryViewControllerMock!
+    var mockDataSource: AccountSummaryDataSourceMock!
 
     override func setUpWithError() throws {
+        self.mockDataSource = AccountSummaryDataSourceMock()
         self.view = AccountSummaryViewControllerMock()
-        self.sut = AccountSummaryPresenter()
-
+        self.sut = AccountSummaryPresenter(dataSource: mockDataSource)
     }
 
     override func tearDownWithError() throws {
@@ -30,11 +31,11 @@ final class AccountSummaryPresenterTests: XCTestCase {
         self.sut = nil
     }
 
-    func fetchAccountSummaryModels() {
+    func fetchAccountSummaryModels() async {
         // Given
         sut.attach(view)
         //When
-        sut.fetchAccountSummaryModels()
+        await sut.fetchAccountSummaryModels()
         // Then
         XCTAssertEqual(view.actions, [.getAccounts])
 

@@ -7,10 +7,14 @@
 
 import Foundation
 import SwiftUI
-struct APIService {
-    let urlString: String
 
-    func getAPI<T: Decodable>(for: T.Type) async throws -> T {
+protocol APIServiceProtocol {
+    func getAPI<T: Decodable>(for: T.Type, urlString: String) async throws -> T
+}
+
+class APIService: APIServiceProtocol {
+
+    func getAPI<T: Decodable>(for: T.Type, urlString: String) async throws -> T {
         guard let url = URL(string: urlString) else {
             throw FetchError.urlError
         }
@@ -27,7 +31,7 @@ struct APIService {
                 throw FetchError.decodingError
             }
         } catch {
-            throw FetchError.dataTaskError
+            throw error
         }
     }
 }
