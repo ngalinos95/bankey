@@ -47,6 +47,7 @@ class AccountSummaryPresenter: AccountSummaryPresenterProtocol {
                                                      balanceCents: data.4)
             accounts.append(accountSummary)
         }
-        self.view?.getAccounts(accounts: accounts)
+//        self.view?.getAccounts(accounts: accounts)
+          self.view?.accounts = accounts
     }
 }

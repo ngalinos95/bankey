@@ -83,7 +83,7 @@ extension AccountSummaryViewController {
     }
 
     private func setupHeaderView() {
-        let headerView = AccountSummaryHeaderView(frame: .zero)
+        let headerView = AccountSummaryHeaderView()
 
         var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width

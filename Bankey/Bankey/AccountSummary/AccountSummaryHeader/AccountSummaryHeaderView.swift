@@ -10,7 +10,7 @@ import UIKit
 class AccountSummaryHeaderView: UIView {
     
     @IBOutlet var contentView: UIView!
-    
+    @IBOutlet weak var dateLabel: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -30,7 +30,8 @@ class AccountSummaryHeaderView: UIView {
         bundle.loadNibNamed("AccountSummaryHeaderView", owner: self, options: nil)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = appColor
-        
+        dateLabel.text = "12/07/2024"
+
         addSubview(contentView)
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: self.topAnchor),
