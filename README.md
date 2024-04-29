@@ -7,8 +7,8 @@ page app, with a tab bar and UINavigationController for each inner tab layer
 THe app was build with MVP design patter , protocols DI for all the classes dependencies and Unit Tests for the Landing Page - Presenter and Datasource(Networking Layer)
 
 ## App Credentials
-Username - Any non empty string
-Password - 1234
+- Username - Any non empty string
+- Password - 1234
 
 
 ## Topics Covered
