@@ -39,7 +39,7 @@ Password - 1234
 
 
 ## Demo
-<img src="https://github.com/ngalinos95/bankey/blob/main/ReadmeGIF.gif" width="400" height="300">
+<img src="https://github.com/ngalinos95/bankey/blob/main/ReadmeGIF.gif" width="670" height="300">
 
 
 
