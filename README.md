@@ -39,7 +39,7 @@ Password - 1234
 
 
 ## Demo
-![](https://github.com/ngalinos95/HeroesAPI_MVP-UIKit-/blob/main/hero.gif)
+![](https://github.com/ngalinos95/bankey/blob/main/ReadmeGIF.gif)
 
 
 
