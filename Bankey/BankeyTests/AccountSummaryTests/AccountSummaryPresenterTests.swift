@@ -35,7 +35,7 @@ final class AccountSummaryPresenterTests: XCTestCase {
         //When
         await sut.fetchAccountSummaryModels()
         // Then
-        XCTAssertEqual(view.actions, [.getAccounts])
+        XCTAssertEqual(view.actions, [.showLoader, .getAccounts, .hideLoader])
 
     }
 

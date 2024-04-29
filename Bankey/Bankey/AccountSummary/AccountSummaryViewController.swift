@@ -10,6 +10,8 @@ import UIKit
 
 protocol AccountSummaryViewProtocol: AnyObject {
     func getAccounts(accounts: [AccountSummaryModel])
+    func showLoader()
+    func hideLoader()
 }
 
 class AccountSummaryViewController: UIViewController {
@@ -51,6 +53,12 @@ class AccountSummaryViewController: UIViewController {
         button.tintColor = .label
         return button
     }()
+    // Loader
+    lazy var loader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(style: .large)
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        return loader
+    }()
 }
 // MARK: - Setup
 extension AccountSummaryViewController {
@@ -63,6 +71,7 @@ extension AccountSummaryViewController {
         setupTableView()
         setupHeaderView()
         setupFooterView()
+        setupLoader()
     }
 
     private func setupTableView() {
@@ -99,6 +108,14 @@ extension AccountSummaryViewController {
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.isHidden = true
     }
+
+    private func setupLoader() {
+        view.addSubview(loader)
+        NSLayoutConstraint.activate([
+            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
 }
 // MARK: - Delegates Conformation
 
@@ -127,6 +144,15 @@ extension AccountSummaryViewController: UITableViewDelegate {
 }
 
 extension AccountSummaryViewController: AccountSummaryViewProtocol {
+    func showLoader() {
+        loader.startAnimating()
+    }
+    
+    func hideLoader() {
+        loader.stopAnimating()
+        loader.hidesWhenStopped = true
+    }
+    
     func getAccounts(accounts: [AccountSummaryModel]) {
         self.accounts = accounts
         self.tableView.reloadData()

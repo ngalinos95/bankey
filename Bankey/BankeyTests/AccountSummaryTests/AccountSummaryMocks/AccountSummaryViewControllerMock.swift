@@ -9,11 +9,26 @@ import Foundation
 @testable import Bankey
 
 class AccountSummaryViewControllerMock: AccountSummaryViewProtocol {
-    var actions: [Actions] = []
-
     enum Actions: Equatable {
         case getAccounts
+        case showLoader
+        case hideLoader
     }
+
+    var actions: [Actions] = []
+
+    func showLoader() {
+        actions += [.showLoader]
+
+    }
+    
+    func hideLoader() {
+        actions += [.hideLoader]
+
+    }
+    
+
+
 
     func getAccounts(accounts: [Bankey.AccountSummaryModel]) {
         actions += [.getAccounts]
