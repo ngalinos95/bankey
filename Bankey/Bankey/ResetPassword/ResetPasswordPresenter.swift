@@ -23,7 +23,14 @@ class ResetPasswordPresenter: ResetPasswordPresenterProtocol {
     // A computed property to check for the password validation
     var isPasswordValid: Bool {
         return validPasswordConstraints >= 3
-        && isLengthValid(view?.firstTextField.passwordTextField.text ?? "")
+        && isLengthValid(passwordText)
+    }
+    // Extract the Password and Matchers text
+    private var passwordText: String {
+        return self.view?.firstTextField.passwordTextField.text ?? ""
+    }
+    private var matcherText: String {
+        return self.view?.secondTextField.passwordTextField.text ?? ""
     }
 
     func attach(_ view: ResetPassworViewControllerProtocol) {
