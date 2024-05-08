@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 protocol ResetPassworViewControllerProtocol: AnyObject {
     var firstTextField: PasswordTextField { get }
     var secondTextField: PasswordTextField { get }
@@ -59,6 +60,7 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
 extension ResetPasswordViewController {
 
     func setup() {
+        firstTextField.delegate = self
     }
 
     func layout() {
@@ -95,8 +97,11 @@ extension ResetPasswordViewController {
 }
 
 // MARK: - Delegates Conformance
-extension ResetPasswordViewController {
-
+// We use this delegate to pass from the text from textField View to the viewController
+extension ResetPasswordViewController: PasswordTextFieldDelegate {
+    func textFieldChanged(_ text: String) {
+        self.presenter.statusValidation(text)
+    }
 }
 
 // MARK: - Actions

@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
+protocol PasswordTextFieldDelegate: AnyObject {
+    func textFieldChanged(_ text: String)
+}
+
 class PasswordTextField: UIView {
     let placeHolder: String
+    weak var delegate: PasswordTextFieldDelegate?
 
     init(placeHolder: String) {
         self.placeHolder = placeHolder
@@ -34,6 +39,7 @@ class PasswordTextField: UIView {
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = false
         passwordTextField.keyboardType = .asciiCapable
+        passwordTextField.addTarget(self, action: #selector(textFieldDIdEditingChanged), for: .editingChanged)
         return passwordTextField
     }()
     // Left Textfield Image
@@ -131,5 +137,11 @@ extension PasswordTextField: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
+    }
+}
+// MARK: - Actions
+extension PasswordTextField {
+    @objc func textFieldDIdEditingChanged(_ sender: UITextField) {
+        self.delegate?.textFieldChanged(sender.text ?? "")
     }
 }
