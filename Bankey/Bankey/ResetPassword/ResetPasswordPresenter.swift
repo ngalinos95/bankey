@@ -51,6 +51,7 @@ extension ResetPasswordPresenter {
     func hasNumber(_ text: String) -> Bool {
         return text.contains { $0.isNumber }
     }
+    // Fifth CriteriaValidation
     func hasSymbol(_ text: String) -> Bool {
         let regex = #"[!@#$%&*]"#
         if let _ = text.range(of: regex, options: .regularExpression) {

@@ -60,7 +60,9 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
 extension ResetPasswordViewController {
 
     func setup() {
-        firstTextField.delegate = self
+        firstTextField.passwordDelegate = self
+        secondTextField.matcherDelegate = self
+        setupDismissKeyboardGesture()
     }
 
     func layout() {
@@ -97,14 +99,29 @@ extension ResetPasswordViewController {
 }
 
 // MARK: - Delegates Conformance
-// We use this delegate to pass from the text from textField View to the viewController
+// We use this delegate to pass the text from textField View to the viewController
 extension ResetPasswordViewController: PasswordTextFieldDelegate {
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     func textFieldChanged(_ text: String) {
         self.presenter.statusValidation(text)
     }
 }
 
 // MARK: - Actions
+extension ResetPasswordViewController {
+
+    private func setupDismissKeyboardGesture() {
+        let dismissKeyboatdTap = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_: )))
+        view.addGestureRecognizer(dismissKeyboatdTap)
+    }
+
+    @objc func viewTapped(_ recognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+}
 
 
 

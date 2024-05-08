@@ -14,7 +14,8 @@ protocol PasswordTextFieldDelegate: AnyObject {
 
 class PasswordTextField: UIView {
     let placeHolder: String
-    weak var delegate: PasswordTextFieldDelegate?
+    weak var passwordDelegate: PasswordTextFieldDelegate?
+    weak var matcherDelegate: PasswordTextFieldDelegate?
 
     init(placeHolder: String) {
         self.placeHolder = placeHolder
@@ -137,11 +138,12 @@ extension PasswordTextField: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
+        print("ended editing")
     }
 }
 // MARK: - Actions
 extension PasswordTextField {
     @objc func textFieldDIdEditingChanged(_ sender: UITextField) {
-        self.delegate?.textFieldChanged(sender.text ?? "")
+        self.passwordDelegate?.textFieldChanged(sender.text ?? "")
     }
 }
