@@ -12,8 +12,6 @@ protocol ResetPassworViewControllerProtocol: AnyObject {
     var firstTextField: PasswordTextField { get }
     var secondTextField: PasswordTextField { get }
     var passwordStatusView: PasswordStatusView { get }
-
-
 }
 
 class ResetPasswordViewController: UIViewController, ResetPassworViewControllerProtocol {
@@ -43,6 +41,15 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
     let passwordStatusView = PasswordStatusView()
     // Re-enter Password TextField
     let secondTextField =  PasswordTextField(placeHolder: "Re-Enter password")
+    // Reset Button
+    lazy var resetButton: UIButton = {
+        let resetButton = UIButton(type: .system)
+        resetButton.translatesAutoresizingMaskIntoConstraints = false
+        resetButton.configuration = .filled()
+        resetButton.setTitle("Reset password", for: [])
+        // resetButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .primaryActionTriggered)
+        return resetButton
+    }()
 
 
 
@@ -69,12 +76,19 @@ extension ResetPasswordViewController {
             passwordStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             passwordStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
-//         Add Second Password TextField (Re-Enter Password)
+        // Add Second Password TextField (Re-Enter Password)
         view.addSubview(secondTextField)
         NSLayoutConstraint.activate([
             secondTextField.topAnchor.constraint(equalTo: passwordStatusView.bottomAnchor, constant: 16),
             secondTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             secondTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8)
+        ])
+        // Add Reset Button
+        view.addSubview(resetButton)
+        NSLayoutConstraint.activate([
+            resetButton.topAnchor.constraint(equalTo: secondTextField.bottomAnchor, constant: 16),
+            resetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            resetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
     }
 

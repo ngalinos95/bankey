@@ -14,12 +14,28 @@ class PasswordCiteriaView: UIView {
     let checkmarkImage = UIImage(systemName: "checkmark.circle")!.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
     let xmarkImage = UIImage(systemName: "xmark.circle")!.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
     let circleImage = UIImage(systemName: "circle")!.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
+    // Keep the status on the view
+    var isCriteriaMet: Bool = false {
+        didSet {
+            if isCriteriaMet {
+                statusImage.image = checkmarkImage
+            } else {
+                statusImage.image = xmarkImage
+            }
+        }
+    }
+
+    func reset() {
+        isCriteriaMet = false
+        statusImage.image = circleImage
+    }
 
     init(criteriaText: String) {
         self.criteriaText = criteriaText
         super.init(frame: .zero)
         setup()
         layout()
+        reset()
     }
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: 40)
@@ -74,9 +90,5 @@ extension PasswordCiteriaView{
             criteriaLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
         ])
 
-    }
-    // Change the status image based on acceptance criteria
-    func setStatusIcon(isAccepted: Bool) {
-        isAccepted ? (statusImage.image = checkmarkImage) : (statusImage.image = xmarkImage)
     }
 }
