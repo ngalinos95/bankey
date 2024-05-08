@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 protocol ResetPassworViewControllerProtocol: AnyObject {
+    var firstTextField: PasswordTextField { get }
+    var secondTextField: PasswordTextField { get }
+
 
 }
 
@@ -16,7 +19,7 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
 
     let presenter: ResetPasswordPresenterProtocol
 
-    init(presenter: ResetPasswordPresenterProtocol = ResetPasswordPresenter() ) {
+    init(presenter: ResetPasswordPresenterProtocol = ResetPasswordPresenter()) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,7 +36,14 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
     }
 
 // MARK: - Views
-    let firstTextField =  PasswordTextField()
+    // Password TextField
+    let firstTextField =  PasswordTextField(placeHolder: "Enter password")
+    // Password Status
+    let passwordStatusView = PasswordStatusView()
+    // Re-enter Password TextField
+    let secondTextField =  PasswordTextField(placeHolder: "Re-Enter password")
+
+
 
 }
 
@@ -41,16 +51,29 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
 extension ResetPasswordViewController {
 
     func setup() {
-        firstTextField.passwordTextField.placeholder = "Enter password"
     }
 
     func layout() {
         // Add first textfield
         view.addSubview(firstTextField)
         NSLayoutConstraint.activate([
-            firstTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            firstTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
             firstTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             firstTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8)
+        ])
+        // Add Password Satus View
+        view.addSubview(passwordStatusView)
+        NSLayoutConstraint.activate([
+            passwordStatusView.topAnchor.constraint(equalTo: firstTextField.bottomAnchor, constant: 16),
+            passwordStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            passwordStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+        ])
+//         Add Second Password TextField (Re-Enter Password)
+        view.addSubview(secondTextField)
+        NSLayoutConstraint.activate([
+            secondTextField.topAnchor.constraint(equalTo: passwordStatusView.bottomAnchor, constant: 16),
+            secondTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            secondTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8)
         ])
     }
 

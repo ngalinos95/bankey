@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 class PasswordTextField: UIView {
+    let placeHolder: String
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(placeHolder: String) {
+        self.placeHolder = placeHolder
+        super.init(frame: .zero)
         setup()
         layout()
     }

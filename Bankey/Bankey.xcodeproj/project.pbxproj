@@ -26,6 +26,8 @@
 		CE63D7CE2BEB7E5F0061797D /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7CD2BEB7E5F0061797D /* ResetPasswordViewController.swift */; };
 		CE63D7D02BEB7EB40061797D /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7CF2BEB7EB40061797D /* ResetPasswordPresenter.swift */; };
 		CE63D7D22BEB83450061797D /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7D12BEB83450061797D /* PasswordTextField.swift */; };
+		CE63D7D52BEBA58E0061797D /* PasswordCiteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7D42BEBA58E0061797D /* PasswordCiteriaView.swift */; };
+		CE63D7D72BEBABFA0061797D /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7D62BEBABFA0061797D /* PasswordStatusView.swift */; };
 		CE826D302BDD6ACA003DA75A /* AccountSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */; };
 		CE826D362BDD6E07003DA75A /* AccountSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */; };
 		CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */; };
@@ -74,6 +76,8 @@
 		CE63D7CD2BEB7E5F0061797D /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		CE63D7CF2BEB7EB40061797D /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		CE63D7D12BEB83450061797D /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		CE63D7D42BEBA58E0061797D /* PasswordCiteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCiteriaView.swift; sourceTree = "<group>"; };
+		CE63D7D62BEBABFA0061797D /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryModel.swift; sourceTree = "<group>"; };
 		CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryPresenter.swift; sourceTree = "<group>"; };
 		CE826D3B2BDD832E003DA75A /* BankeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,9 +219,19 @@
 			children = (
 				CE63D7CD2BEB7E5F0061797D /* ResetPasswordViewController.swift */,
 				CE63D7CF2BEB7EB40061797D /* ResetPasswordPresenter.swift */,
-				CE63D7D12BEB83450061797D /* PasswordTextField.swift */,
+				CE63D7D32BEBA50C0061797D /* ResetPasswordViews */,
 			);
 			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		CE63D7D32BEBA50C0061797D /* ResetPasswordViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE63D7D12BEB83450061797D /* PasswordTextField.swift */,
+				CE63D7D62BEBABFA0061797D /* PasswordStatusView.swift */,
+				CE63D7D42BEBA58E0061797D /* PasswordCiteriaView.swift */,
+			);
+			path = ResetPasswordViews;
 			sourceTree = "<group>";
 		};
 		CE826D3C2BDD832E003DA75A /* BankeyTests */ = {
@@ -399,6 +413,7 @@
 				CE066CE12BDC542800FB8FA3 /* MainViewController.swift in Sources */,
 				CE4723012BDD157B000D0DB4 /* AccountSummaryViewController.swift in Sources */,
 				CE63D7CE2BEB7E5F0061797D /* ResetPasswordViewController.swift in Sources */,
+				CE63D7D52BEBA58E0061797D /* PasswordCiteriaView.swift in Sources */,
 				CE47230E2BDD38ED000D0DB4 /* AccountSummaryCell.swift in Sources */,
 				CE826D4E2BDDA5CA003DA75A /* UITextField+SecureToggle.swift in Sources */,
 				CEAA870B2BDE924500BAD542 /* AccountSummaryDataSource.swift in Sources */,
@@ -411,6 +426,7 @@
 				CE63D7D02BEB7EB40061797D /* ResetPasswordPresenter.swift in Sources */,
 				CE826D362BDD6E07003DA75A /* AccountSummaryPresenter.swift in Sources */,
 				CE066C8A2BDAC0F600FB8FA3 /* OnboardingContainerViewController.swift in Sources */,
+				CE63D7D72BEBABFA0061797D /* PasswordStatusView.swift in Sources */,
 				CE63D7D22BEB83450061797D /* PasswordTextField.swift in Sources */,
 				CE4833242BD9827E0002C6A6 /* LoginViewPresenter.swift in Sources */,
 			);
