@@ -46,15 +46,15 @@ class PasswordStatusView: UIView {
     let firstCriteriaLabel = PasswordCiteriaView(criteriaText: "8-32 characters (no spaces)")
     let secondCriteriaLabel = PasswordCiteriaView(criteriaText: "Uppercase letter (A-Z)")
     let thirdCriteriaLabel = PasswordCiteriaView(criteriaText: "Lowercase letter (a-z)")
-    let forthCriteriaLabel = PasswordCiteriaView(criteriaText: "Digit (0-9")
-    let fifthCriteriaLabel = PasswordCiteriaView(criteriaText: "Special Character (e.g. !@#$%^")
+    let forthCriteriaLabel = PasswordCiteriaView(criteriaText: "Digit (0-9)")
+    let fifthCriteriaLabel = PasswordCiteriaView(criteriaText: "Special Character (e.g. !@#$%^)")
 }
 // MARK: - Setup
 extension PasswordStatusView {
 
     func setup() {
         self.backgroundColor = .systemGray6
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = 8
         self.clipsToBounds = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }

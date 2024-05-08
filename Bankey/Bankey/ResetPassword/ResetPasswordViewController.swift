@@ -11,6 +11,7 @@ import UIKit
 protocol ResetPassworViewControllerProtocol: AnyObject {
     var firstTextField: PasswordTextField { get }
     var secondTextField: PasswordTextField { get }
+    var passwordStatusView: PasswordStatusView { get }
 
 
 }

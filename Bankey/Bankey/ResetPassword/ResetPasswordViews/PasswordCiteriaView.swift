@@ -75,4 +75,8 @@ extension PasswordCiteriaView{
         ])
 
     }
+    // Change the status image based on acceptance criteria
+    func setStatusIcon(isAccepted: Bool) {
+        isAccepted ? (statusImage.image = checkmarkImage) : (statusImage.image = xmarkImage)
+    }
 }

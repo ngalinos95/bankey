@@ -19,8 +19,7 @@ class ResetPasswordPresenter: ResetPasswordPresenterProtocol {
     func attach(_ view: ResetPassworViewControllerProtocol) {
         assert(self.view == nil, "Cannot attach view twice")
         self.view = view
-        view.firstTextField.passwordTextField.placeholder = "Enter Password"
-        view.secondTextField.passwordTextField.placeholder = "Re-Enter Password"
-
+        view.firstTextField.passwordTextField.placeholder = "Enter New Password"
+        view.secondTextField.passwordTextField.placeholder = "Re-Enter New Password"
     }
 }
