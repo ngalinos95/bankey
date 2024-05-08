@@ -31,6 +31,7 @@ class PasswordTextField: UIView {
         passwordTextField.placeholder = "Password"
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = false
+        passwordTextField.keyboardType = .asciiCapable
         return passwordTextField
     }()
     // Left Textfield Image
@@ -112,6 +113,7 @@ extension PasswordTextField {
 extension PasswordTextField {
     @objc func didTapVisibility() {
         passwordTextField.isSecureTextEntry.toggle()
+        visibilityButton.isSelected.toggle()
     }
 }
 
