@@ -13,6 +13,7 @@ protocol ResetPassworViewControllerProtocol: AnyObject {
     var firstTextField: PasswordTextField { get }
     var secondTextField: PasswordTextField { get }
     var passwordStatusView: PasswordStatusView { get }
+    var resetButton: UIButton { get }
 }
 
 class ResetPasswordViewController: UIViewController, ResetPassworViewControllerProtocol {
@@ -48,6 +49,7 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
         resetButton.translatesAutoresizingMaskIntoConstraints = false
         resetButton.configuration = .filled()
         resetButton.setTitle("Reset password", for: [])
+        resetButton.isEnabled = false
         // resetButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .primaryActionTriggered)
         return resetButton
     }()
@@ -101,8 +103,9 @@ extension ResetPasswordViewController {
 // MARK: - Delegates Conformance
 // We use this delegate to pass the text from textField View to the viewController
 extension ResetPasswordViewController: PasswordTextFieldDelegate {
-    func dismissKeyboard() {
-        view.endEditing(true)
+    func textFileldEndedEditing() {
+        self.presenter.passwordValidation()
+        self.presenter.matcherValidation()
     }
     
     func textFieldChanged(_ text: String) {

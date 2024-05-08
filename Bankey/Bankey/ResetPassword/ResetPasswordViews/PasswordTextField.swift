@@ -10,6 +10,7 @@ import UIKit
 
 protocol PasswordTextFieldDelegate: AnyObject {
     func textFieldChanged(_ text: String)
+    func textFileldEndedEditing()
 }
 
 class PasswordTextField: UIView {
@@ -78,6 +79,7 @@ class PasswordTextField: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        label.isHidden = true
         return label
     }()
     // StackView
@@ -138,7 +140,8 @@ extension PasswordTextField: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("ended editing")
+        self.passwordDelegate?.textFileldEndedEditing()
+        self.matcherDelegate?.textFileldEndedEditing()
     }
 }
 // MARK: - Actions
