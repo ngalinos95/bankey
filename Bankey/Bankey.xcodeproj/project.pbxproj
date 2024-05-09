@@ -28,6 +28,8 @@
 		CE63D7D22BEB83450061797D /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7D12BEB83450061797D /* PasswordTextField.swift */; };
 		CE63D7D52BEBA58E0061797D /* PasswordCiteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7D42BEBA58E0061797D /* PasswordCiteriaView.swift */; };
 		CE63D7D72BEBABFA0061797D /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7D62BEBABFA0061797D /* PasswordStatusView.swift */; };
+		CE63D7DC2BECC07D0061797D /* ResetPasswordViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7DB2BECC07D0061797D /* ResetPasswordViewControllerMock.swift */; };
+		CE63D7DE2BECC1980061797D /* ResetPasswordPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63D7DD2BECC1980061797D /* ResetPasswordPresenterMock.swift */; };
 		CE826D302BDD6ACA003DA75A /* AccountSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */; };
 		CE826D362BDD6E07003DA75A /* AccountSummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */; };
 		CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE826D452BDD8393003DA75A /* AccountSummaryPresenterTests.swift */; };
@@ -78,6 +80,8 @@
 		CE63D7D12BEB83450061797D /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		CE63D7D42BEBA58E0061797D /* PasswordCiteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCiteriaView.swift; sourceTree = "<group>"; };
 		CE63D7D62BEBABFA0061797D /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
+		CE63D7DB2BECC07D0061797D /* ResetPasswordViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewControllerMock.swift; sourceTree = "<group>"; };
+		CE63D7DD2BECC1980061797D /* ResetPasswordPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenterMock.swift; sourceTree = "<group>"; };
 		CE826D2F2BDD6ACA003DA75A /* AccountSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryModel.swift; sourceTree = "<group>"; };
 		CE826D352BDD6E07003DA75A /* AccountSummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryPresenter.swift; sourceTree = "<group>"; };
 		CE826D3B2BDD832E003DA75A /* BankeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,11 +238,29 @@
 			path = ResetPasswordViews;
 			sourceTree = "<group>";
 		};
+		CE63D7D92BECBFF00061797D /* ResetPasswordTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE63D7DA2BECC02E0061797D /* ResetPasswordMocks */,
+			);
+			path = ResetPasswordTests;
+			sourceTree = "<group>";
+		};
+		CE63D7DA2BECC02E0061797D /* ResetPasswordMocks */ = {
+			isa = PBXGroup;
+			children = (
+				CE63D7DB2BECC07D0061797D /* ResetPasswordViewControllerMock.swift */,
+				CE63D7DD2BECC1980061797D /* ResetPasswordPresenterMock.swift */,
+			);
+			path = ResetPasswordMocks;
+			sourceTree = "<group>";
+		};
 		CE826D3C2BDD832E003DA75A /* BankeyTests */ = {
 			isa = PBXGroup;
 			children = (
 				CEAA87112BDE9D5A00BAD542 /* TestUtils */,
 				CE826D442BDD8338003DA75A /* AccountSummaryTests */,
+				CE63D7D92BECBFF00061797D /* ResetPasswordTests */,
 			);
 			path = BankeyTests;
 			sourceTree = "<group>";
@@ -442,6 +464,8 @@
 				CE826D462BDD8393003DA75A /* AccountSummaryPresenterTests.swift in Sources */,
 				CEAA87132BDE9D9F00BAD542 /* MockResponseFactory.swift in Sources */,
 				CE826D492BDD83E8003DA75A /* AccountSummaryViewControllerMock.swift in Sources */,
+				CE63D7DE2BECC1980061797D /* ResetPasswordPresenterMock.swift in Sources */,
+				CE63D7DC2BECC07D0061797D /* ResetPasswordViewControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
