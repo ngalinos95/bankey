@@ -103,9 +103,13 @@ extension ResetPasswordViewController {
 // MARK: - Delegates Conformance
 // We use this delegate to pass the text from textField View to the viewController
 extension ResetPasswordViewController: PasswordTextFieldDelegate {
-    func textFileldEndedEditing() {
+    func passwordTextFileldEndedEditing() {
         self.presenter.passwordValidation()
+    }
+    
+    func matcherTextFileldEndedEditing() {
         self.presenter.matcherValidation()
+
     }
     
     func textFieldChanged(_ text: String) {

@@ -10,7 +10,8 @@ import UIKit
 
 protocol PasswordTextFieldDelegate: AnyObject {
     func textFieldChanged(_ text: String)
-    func textFileldEndedEditing()
+    func passwordTextFileldEndedEditing()
+    func matcherTextFileldEndedEditing()
 }
 
 class PasswordTextField: UIView {
@@ -140,8 +141,8 @@ extension PasswordTextField: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.passwordDelegate?.textFileldEndedEditing()
-        self.matcherDelegate?.textFileldEndedEditing()
+        self.passwordDelegate?.passwordTextFileldEndedEditing()
+        self.matcherDelegate?.matcherTextFileldEndedEditing()
     }
 }
 // MARK: - Actions

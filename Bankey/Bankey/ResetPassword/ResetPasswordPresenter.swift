@@ -43,7 +43,10 @@ class ResetPasswordPresenter: ResetPasswordPresenterProtocol {
 
 // MARK: - Validations
 extension ResetPasswordPresenter {
-    // Matcher Valifation
+    /**
+     Check if the Matching password is Valid (is matching)
+        Perform the appropriate Actions to the View
+     */
     func matcherValidation() {
         if view?.firstTextField.passwordTextField.text !=
             view?.secondTextField.passwordTextField.text {
@@ -55,6 +58,10 @@ extension ResetPasswordPresenter {
             view?.resetButton.isEnabled = true
         }
     }
+    /**
+     Check if Password is Valid
+        Perform the appropriate Actions to the View
+     */
     func passwordValidation(){
         if isPasswordValid {
             view?.firstTextField.errorLabel.isHidden = true
@@ -65,7 +72,11 @@ extension ResetPasswordPresenter {
             view?.firstTextField.errorLabel.text = "Please check the validation criterias"
         }
     }
-    // Status Validation
+
+    /**
+     Update the Password Status View according
+     to the validation checks
+     */
     func statusValidation(_ text: String) {
         validPasswordConstraints = 0
         view?.passwordStatusView.firstCriteriaLabel.isCriteriaMet = isLengthValid(text)
