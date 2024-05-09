@@ -35,6 +35,10 @@ class ResetPasswordViewController: UIViewController, ResetPassworViewControllerP
         setup()
         layout()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.resetView()
+    }
 
 // MARK: - Views
     // Password TextField
@@ -113,7 +117,7 @@ extension ResetPasswordViewController: PasswordTextFieldDelegate {
     }
     
     func textFieldChanged(_ text: String) {
-        self.presenter.statusValidation(text)
+        self.presenter.updateStatusValidation(text)
     }
 }
 

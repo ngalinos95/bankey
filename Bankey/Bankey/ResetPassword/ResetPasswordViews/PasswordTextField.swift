@@ -120,6 +120,11 @@ extension PasswordTextField {
         stackView.addArrangedSubview(divider)
         stackView.addArrangedSubview(errorLabel)
     }
+
+    func reset() {
+        errorLabel.isHidden = true
+        passwordTextField.text = ""
+    }
 }
 // MARK: - Action
 extension PasswordTextField {

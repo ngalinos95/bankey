@@ -75,6 +75,13 @@ extension PasswordStatusView {
         stackView.addArrangedSubview(forthCriteriaLabel)
         stackView.addArrangedSubview(fifthCriteriaLabel)
     }
+    func reset() {
+        firstCriteriaLabel.reset()
+        secondCriteriaLabel.reset()
+        thirdCriteriaLabel.reset()
+        forthCriteriaLabel.reset()
+        fifthCriteriaLabel.reset()
+    }
 
 }
 

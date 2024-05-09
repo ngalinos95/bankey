@@ -90,5 +90,8 @@ extension PasswordCiteriaView{
             criteriaLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
         ])
 
+        func reset() {
+            statusImage.image = circleImage
+        }
     }
 }

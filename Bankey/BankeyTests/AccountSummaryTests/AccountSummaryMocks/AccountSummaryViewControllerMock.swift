@@ -27,9 +27,6 @@ class AccountSummaryViewControllerMock: AccountSummaryViewProtocol {
 
     }
     
-
-
-
     func getAccounts(accounts: [Bankey.AccountSummaryModel]) {
         actions += [.getAccounts]
     }
