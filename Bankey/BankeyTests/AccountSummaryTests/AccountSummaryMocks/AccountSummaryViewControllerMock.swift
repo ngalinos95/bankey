@@ -18,16 +18,14 @@ class AccountSummaryViewControllerMock: AccountSummaryViewProtocol {
     var actions: [Actions] = []
 
     func showLoader() {
-        actions += [.showLoader]
-
+        actions.append(.showLoader)
     }
     
     func hideLoader() {
-        actions += [.hideLoader]
-
+        actions.append(.hideLoader)
     }
     
     func getAccounts(accounts: [Bankey.AccountSummaryModel]) {
-        actions += [.getAccounts]
+        actions.append(.getAccounts)
     }
 }

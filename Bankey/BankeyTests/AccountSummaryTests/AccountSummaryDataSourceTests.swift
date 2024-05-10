@@ -33,7 +33,6 @@ final class AccountSummaryDataSourceTests: XCTestCase {
         // Then
         XCTAssertEqual(response.count, 4)
         XCTAssertEqual(response.first?.accountName, "Checking")
-
     }
 
 }

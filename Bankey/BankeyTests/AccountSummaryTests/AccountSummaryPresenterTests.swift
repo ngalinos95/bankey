@@ -25,6 +25,7 @@ final class AccountSummaryPresenterTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        self.mockDataSource = nil
         self.view = nil
         self.sut = nil
     }
@@ -36,6 +37,19 @@ final class AccountSummaryPresenterTests: XCTestCase {
         await sut.fetchAccountSummaryModels()
         // Then
         XCTAssertEqual(view.actions, [.showLoader, .getAccounts, .hideLoader])
+
+    }
+
+    func testFetchAccountSummaryModelsWithError() async {
+        // Given
+        // Create a mockDataSource that throws an error
+        self.mockDataSource = AccountSummaryDataSourceMock(error: MockError.genericError)
+        self.sut = AccountSummaryPresenter(dataSource: mockDataSource)
+        sut.attach(view)
+        //When
+        await sut.fetchAccountSummaryModels()
+        // Then
+        XCTAssertEqual(view.actions, [.showLoader, .hideLoader])
 
     }
 
