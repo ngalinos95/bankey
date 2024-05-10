@@ -43,7 +43,7 @@ final class AccountSummaryPresenterTests: XCTestCase {
     func testFetchAccountSummaryModelsWithError() async {
         // Given
         // Create a mockDataSource that throws an error
-        self.mockDataSource = AccountSummaryDataSourceMock(error: MockError.genericError)
+        self.mockDataSource = AccountSummaryDataSourceMock(error: .genericError)
         self.sut = AccountSummaryPresenter(dataSource: mockDataSource)
         sut.attach(view)
         //When

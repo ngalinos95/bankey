@@ -10,11 +10,16 @@ import Foundation
 
 class MockAPIService: APIServiceProtocol {
     var mockReponse: Any
-    init(mockResponse: Any) {
+    var error: MockError?
+    init(mockResponse: Any, error: MockError? = nil) {
         self.mockReponse = mockResponse
+        self.error = error
     }
 
-    func getAPI<T: Decodable>(for: T.Type, urlString: String) async throws -> T{
+    func getAPI<T: Decodable>(for: T.Type, urlString: String) async throws -> T {
+        if let error {
+            throw error
+        }
         return mockReponse as! T
     }
 }

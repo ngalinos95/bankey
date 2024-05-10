@@ -14,9 +14,9 @@ enum MockError: Error {
 
 class AccountSummaryDataSourceMock: AccountSummaryDataSourceProtocol {
     let mockFactory = MockResponseFactory()
-    let error: Error?
+    let error: MockError?
 
-    init(error:Error? = nil) {
+    init(error:MockError? = nil) {
         self.error = error
     }
 

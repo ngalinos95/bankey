@@ -31,7 +31,6 @@ class AccountSummaryPresenter: AccountSummaryPresenterProtocol {
         do {
             let accounts = try await dataSource.fetchAccounts()
             self.view?.getAccounts(accounts: accounts)
-
         } catch {
             // TODO: Error Handling code should go here (call view error)
             print(error.localizedDescription)
